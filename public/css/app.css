@@ -664,6 +664,10 @@ select {
   margin-left: 1rem;
   margin-right: 1rem;
 }
+.my-8 {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
 .ml-3 {
   margin-left: 0.75rem;
 }
@@ -720,6 +724,12 @@ select {
 }
 .-mt-px {
   margin-top: -1px;
+}
+.ml-6 {
+  margin-left: 1.5rem;
+}
+.ml-22 {
+  margin-left: 5.5rem;
 }
 .block {
   display: block;
@@ -820,11 +830,14 @@ select {
 .w-8 {
   width: 2rem;
 }
+.w-32 {
+  width: 8rem;
+}
+.w-36 {
+  width: 9rem;
+}
 .w-48 {
   width: 12rem;
-}
-.w-24 {
-  width: 6rem;
 }
 .max-w-7xl {
   max-width: 80rem;
@@ -939,6 +952,11 @@ select {
   --tw-space-x-reverse: 0;
   margin-right: calc(0.5rem * var(--tw-space-x-reverse));
   margin-left: calc(0.5rem * calc(1 - var(--tw-space-x-reverse)));
+}
+.space-x-4 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 0;
+  margin-right: calc(1rem * var(--tw-space-x-reverse));
+  margin-left: calc(1rem * calc(1 - var(--tw-space-x-reverse)));
 }
 .overflow-hidden {
   overflow: hidden;
@@ -1362,6 +1380,50 @@ select {
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 3;
 }
+/* vertical line to the left of the comments */
+.comments-container::before {
+  position: absolute;
+  display: block;
+  top: 0;
+  left: -40px;
+  content: "";
+  width: 3px;
+  height: 100%;
+  background: #edf0f5;
+}
+/* horizontal line to the left of the comments */
+.comment-container::before {
+  position: absolute;
+  display: block;
+  top: 57px;
+  content: "";
+  width: 23px;
+  height: 3px;
+  background: #edf0f5;
+  left: -40px;
+}
+/* remove last vertical line */
+.comment-container:last-child::after {
+  position: absolute;
+  display: block;
+  top: 60px;
+  left: -40px;
+  content: "";
+  width: 3px;
+  height: calc(100% - 60px);
+  background: #f7f8fc;
+}
+.is-admin::before {
+  position: absolute;
+  width: 38px;
+  height: 38px;
+  border-radius: 38px;
+  border: 7px solid white;
+  box-shadow: 4px 4px 15px 0 rgba(36, 37, 38, 0.08);
+  left: -58px;
+  background: #8b60ed;
+  opacity: 1;
+}
 .hover\:border-gray-300:hover {
   --tw-border-opacity: 1;
   border-color: rgb(212 212 212 / var(--tw-border-opacity));
@@ -1378,13 +1440,13 @@ select {
   --tw-bg-opacity: 1;
   background-color: rgb(245 245 245 / var(--tw-bg-opacity));
 }
-.hover\:bg-gray-200:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(229 229 229 / var(--tw-bg-opacity));
-}
 .hover\:bg-blue-hover:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(40 121 189 / var(--tw-bg-opacity));
+}
+.hover\:bg-gray-200:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(229 229 229 / var(--tw-bg-opacity));
 }
 .hover\:bg-gray-700:hover {
   --tw-bg-opacity: 1;
@@ -1638,4 +1700,3 @@ select {
     padding-right: 2rem;
   }
 }
-
